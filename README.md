@@ -5,7 +5,7 @@ Learn the basics of getting started with kotlin
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicboma1/gettingstartedkotlin/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Analytics](https://ga-beacon.appspot.com/UA-68658653-5/gettingstartedkotlin/readme)](https://github.com/igrigorik/ga-beacon)
 
 
-## Hello World
+## [Hello World](https://youtu.be/iMMBrcabSOI)
 
 Main.kt
 ```kotlin
@@ -43,7 +43,7 @@ Hello World
 Hello World 
 ```
 
-##Variable Basics
+##[Variable Basics](https://youtu.be/bklpMxuzCWU)
 
 Main.kt
 ```kotlin
@@ -91,7 +91,7 @@ null
 Victor Manuel Bolinches
 ```
 
-##Function Basics
+##[Function Basics](https://youtu.be/-4XuESEe45c)
 
 Main.kt
 ```kotlin
@@ -141,7 +141,7 @@ Result
 [1, 2, 3, 4] = [4, 3, 2, 1]
 ```
 
-##Class Basics
+##[Class Basics](https://youtu.be/SI2HiSLDFFs)
 
 Main.kt
 ```kotlin
@@ -205,7 +205,7 @@ Id : 1221  Name: Vicboma
 Employee ToString: Employee@4cc77c2e
 ```
 
-##Data Classes
+##[Data Classes](https://youtu.be/GhwZNoQqejQ)
 
 Main.kt
 ```kotlin
@@ -261,7 +261,7 @@ true
 DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
 ```
 
-##Extension Function Basics
+##[Extension Function Basics](https://youtu.be/SMzNduaGcuo)
 
 Main.kt
 ```kotlin
