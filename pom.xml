@@ -5,14 +5,65 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>BasicsKotlin</groupId>
-    <artifactId>GettingStartedKotlin2</artifactId>
+    <artifactId>GettingStartedKotlin</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <jdk.version>1.8</jdk.version>
+        <kotlin.version>1.0.0-beta-1038</kotlin.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib</artifactId>
-            <version>1.0.0-beta-1038</version>
+            <version>${kotlin.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+        <!--   <dependency>
+              <groupId>org.jetbrains.spek</groupId>
+              <artifactId>spek</artifactId>
+              <version>0.1.165</version>
+
+            <scope>test</scope>
+        </dependency>-->
     </dependencies>
+    <repositories>
+        <repository>
+            <id>jebrains-all</id>
+            <url>http://repository.jetbrains.com/all</url>
+        </repository>
+    </repositories>
+    <build>
+        <testSourceDirectory>${project.basedir}/src/main/test</testSourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
