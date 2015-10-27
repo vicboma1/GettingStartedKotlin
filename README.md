@@ -258,3 +258,31 @@ true
 DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
 ```
 
+##Extension Function Basics
+
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+    val str = "this is my text"
+    val convertSpacesToUnderscores = convertSpacesToUnderscores(str);
+    println(convertSpacesToUnderscores)
+    val convertSpacesToUnderscoresInvokeInstanceString = str.convertSpacesToUnderscoresInvokeInstanceString()
+    println(convertSpacesToUnderscoresInvokeInstanceString)
+}
+
+
+fun convertSpacesToUnderscores(str: String) : String {
+    return str.replace(" ","_")
+}
+
+fun String.convertSpacesToUnderscoresInvokeInstanceString() : String {
+    return this.replace(" ","_")
+}
+```
+
+Result
+```
+function: this_is_my_text
+Invoke Instance String: this_is_my_text
+```
+
