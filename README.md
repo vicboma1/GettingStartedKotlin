@@ -141,7 +141,7 @@ Result
 ##Class Basics
 
 Main.kt
-```koltin
+```kotlin
 fun main(args: Array<String>) {
     customerMethod()
     employeeMethod()
