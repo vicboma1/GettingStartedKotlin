@@ -17,7 +17,7 @@ private fun employeeMethod() {
 }
 
 private fun customerMethod() {
-    val customer = Customer(1234)
+    val customer = CustomerClass(1234)
     customer.doSomething();
     val toString = customer.toString();
     val id = customer.id;

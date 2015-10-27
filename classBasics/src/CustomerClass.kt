@@ -1,7 +1,7 @@
 /**
  * Created by vicboma on 27/10/15.
  */
-public class Customer(_id : Int) {
+public class CustomerClass(_id : Int) {
 
     val id = _id;
     //prototype
