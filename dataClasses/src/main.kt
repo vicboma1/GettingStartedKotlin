@@ -19,5 +19,7 @@ fun main(args: Array<String>) {
     //componentN() functions corresponding to the properties in their order or declaration,
     //copy() function (see below).
     println(dataCustomer4.equals(dataCustomer5))
+    println(dataCustomer4)
+
 
 }
