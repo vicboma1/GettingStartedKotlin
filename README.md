@@ -1,6 +1,9 @@
 # Getting Started Kotlin
 Learn the basics of getting started with kotlin
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicboma1/gettingstartedkotlin/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Analytics](https://ga-beacon.appspot.com/UA-68658653-5/gettingstartedkotlin/readme)](https://github.com/igrigorik/ga-beacon)
+
 
 ## Hello World
 
@@ -289,9 +292,4 @@ Invoke Instance String: this_is_my_text
 Reference:
 * Video tutorials: https://kotlinlang.org/docs/videos.html
 * Manual: https://kotlinlang.org/docs/kotlin-docs.pdf
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicboma1/gettingstartedkotlin/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Analytics](https://ga-beacon.appspot.com/UA-68658653-5/gettingstartedkotlin/readme)](https://github.com/igrigorik/ga-beacon)
-
-
-
 
