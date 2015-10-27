@@ -138,4 +138,123 @@ Result
 [1, 2, 3, 4] = [4, 3, 2, 1]
 ```
 
+##Class Basics
+
+Main.kt
+```koltin
+fun main(args: Array<String>) {
+    customerMethod()
+    employeeMethod()
+}
+
+private fun employeeMethod() {
+    val employee = Employee(1221, "Vicboma")
+    val toString = employee.toString()
+    val id = employee.id
+    val name = employee.name
+
+    println("Id : $id  Name: $name")
+    println("Employee ToString: $toString")
+    println(employee)
+}
+
+private fun customerMethod() {
+    val customer = Customer(1234)
+    customer.doSomething();
+    val toString = customer.toString();
+    val id = customer.id;
+    println("Customer id: $id");
+    println("Customer ToString: $toString");
+}
+```
+
+Customer.kt
+```kotlin
+public class Customer(_id : Int) {
+
+    val id = _id;
+    //prototype
+    var name : String? = ""
+
+    fun doSomething(){
+        println("Some code")
+    }
+
+    override fun toString() : String
+    {
+        return ""+this.id;
+    }
+}
+```
+
+Employee.kt
+```kotlin
+public class Employee( val id : Int, val name: String ) {
+}
+```
+
+Result
+```
+Some code
+Customer id: 1234
+Customer ToString: 1234
+Id : 1221  Name: Vicboma
+Employee ToString: Employee@4cc77c2e
+```
+
+##Data Classes
+
+Main.kt
+```kotlin
+
+fun main(args: Array<String>) {
+    val customer1 = Customer(1, "victor", "victorbolinchesmarin@gmail.com")
+    val customer2 = Customer(1, "victor", "victorbolinchesmarin@gmail.com")
+    val customer3 = customer1;
+    val dataCustomer4 = DataCustomer(1, "victor", "victorbolinchesmarin@gmail.com")
+    val dataCustomer5 = dataCustomer4;
+
+    println(customer1)                    //toString
+    println(customer1.hashCode())         //hashCode
+    println(customer1.equals(customer2))  //equals()
+    println(customer1.equals(customer3))
+
+    //The compiler automatically derives the following members from all 
+    //properties declared in the primary constructor:
+    //equals()/hashCode() pair,
+    //toString() of the form "User(name=John, age=42)",
+    //componentN() functions corresponding to the properties in their order or declaration,
+    //copy() function (see below).
+    println(dataCustomer4.equals(dataCustomer5))
+    println(dataCustomer4)
+}
+```
+
+Customer.kt
+```kotlin 
+public class Customer(val id : Int, val name : String, val email : String) {
+}
+```
+
+DataCustomer.kt
+```kotlin
+/**
+ * The primary constructor needs to have at least one parameter;
+ * All primary constructor parameters need to be marked as val or var;
+ * Data classes cannot be abstract, open, sealed or inner;
+ * Data classes may not extend other classes (but may implement interfaces).
+ */
+data public class DataCustomer(val id : Int, val name : String, val email : String) {
+}
+```
+
+Result
+```
+Customer@4cc77c2e
+1288141870
+false
+true
+true
+DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
+```
 
