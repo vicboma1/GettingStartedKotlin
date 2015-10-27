@@ -7,12 +7,12 @@ public class CustomerClass(_id : Int) {
     //prototype
     var name : String? = ""
 
-    fun doSomething(){
-        println("Some code")
+    fun doSomething() : String {
+       return "Some code"
     }
 
     override fun toString() : String
     {
-        return ""+this.id;
+        return ""+this.id
     }
 }
