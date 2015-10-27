@@ -286,3 +286,6 @@ function: this_is_my_text
 Invoke Instance String: this_is_my_text
 ```
 
+[![Analytics](https://ga-beacon.appspot.com/UA-68658653-5
+/gettingstartedkotlin/readme)](https://github.com/igrigorik/ga-beacon)
+
