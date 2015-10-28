@@ -8,6 +8,7 @@ Learn the basics of getting started with kotlin
 ##Indexes
 * [Hello World](https://github.com/vicboma1/GettingStartedKotlin#hello-world)
 * [Variable Basics](https://github.com/vicboma1/GettingStartedKotlin#variable-basics)
+* [Boolean Operators](https://github.com/vicboma1/GettingStartedKotlin#boolean-operators)
 * [Conditional](https://github.com/vicboma1/GettingStartedKotlin#conditional)
 * [Function Basics](https://github.com/vicboma1/GettingStartedKotlin#function-basics)
 * [Class Basics](https://github.com/vicboma1/GettingStartedKotlin#class-basics)
@@ -15,8 +16,6 @@ Learn the basics of getting started with kotlin
 * [Extension Function Basics](https://github.com/vicboma1/GettingStartedKotlin#extension-function-basics)
 * [Null Safety](https://github.com/vicboma1/GettingStartedKotlin#null-safety)
 
-
-#
 
 
 
@@ -104,6 +103,84 @@ Victor
 Victor Bolinches
 null
 Victor Manuel Bolinches
+```
+
+##Boolean Operations
+
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+    disjunction()
+    conjunction()
+    negation()
+}
+
+private fun negation() {
+    val list = arrayOf(
+        negation(false),
+        negation(true)
+    )
+
+    printlnResult(list)
+}
+
+private fun conjunction() {
+    val list = arrayOf(
+            lazyConjunction(false, false),
+            lazyConjunction(false, true),
+            lazyConjunction(true, false),
+            lazyConjunction(true, true)
+    )
+
+    printlnResult(list)
+}
+
+private fun disjunction() {
+    val list = arrayOf(
+        lazyDisjunction(false, false),
+        lazyDisjunction(false, true),
+        lazyDisjunction(true, false),
+        lazyDisjunction(true, true)
+    )
+
+    printlnResult(list)
+}
+
+fun printlnResult(values:Array<Boolean>){
+    for(x in values){
+        println(x)
+    }
+}
+
+fun lazyDisjunction(cond1:Boolean, cond2: Boolean)  =  cond1 || cond2
+
+fun lazyConjunction(cond1:Boolean, cond2: Boolean)  = cond1 && cond2
+
+fun negation(cond1: Boolean) = !cond1;
+
+}
+```
+
+Math.kt
+```kotlin
+
+Result 
+```
+//Disjunction
+false false = false
+false true  = true
+true  false = true
+true  true  = true
+
+//Conjunction
+false false = false
+false true  = false
+true  false = false
+true  true  = true
+
+//Negation
+false = true
+true  = false
 ```
 
 ##Conditional
