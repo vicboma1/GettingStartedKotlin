@@ -11,6 +11,7 @@ Learn the basics of getting started with kotlin
 * [Conditional](https://github.com/vicboma1/GettingStartedKotlin#conditional)
 * [Function Basics](https://github.com/vicboma1/GettingStartedKotlin#function-basics)
 * [Class Basics](https://github.com/vicboma1/GettingStartedKotlin#class-basics)
+* [Data Classes](https://github.com/vicboma1/GettingStartedKotlin#data-classes)
 * [Extension Function Basics](https://github.com/vicboma1/GettingStartedKotlin#extension-function-basics)
 * [Null Safety](https://github.com/vicboma1/GettingStartedKotlin#null-safety)
 
