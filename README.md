@@ -105,7 +105,7 @@ null
 Victor Manuel Bolinches
 ```
 
-##Boolean Operations
+##Boolean Operators
 
 Main.kt
 ```kotlin
