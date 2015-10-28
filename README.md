@@ -117,8 +117,8 @@ fun main(args: Array<String>) {
 
 private fun negation() {
     val list = arrayOf(
-        negation(false),
-        negation(true)
+        BooleanOperator.negation(false),
+        BooleanOperator.negation(true)
     )
 
     printlnResult(list)
@@ -126,10 +126,10 @@ private fun negation() {
 
 private fun conjunction() {
     val list = arrayOf(
-            lazyConjunction(false, false),
-            lazyConjunction(false, true),
-            lazyConjunction(true, false),
-            lazyConjunction(true, true)
+         BooleanOperator.lazyConjunction(false, false),
+         BooleanOperator.lazyConjunction(false, true),
+         BooleanOperator.lazyConjunction(true, false),
+         BooleanOperator.lazyConjunction(true, true)
     )
 
     printlnResult(list)
@@ -137,10 +137,10 @@ private fun conjunction() {
 
 private fun disjunction() {
     val list = arrayOf(
-        lazyDisjunction(false, false),
-        lazyDisjunction(false, true),
-        lazyDisjunction(true, false),
-        lazyDisjunction(true, true)
+        BooleanOperator.lazyDisjunction(false, false),
+        BooleanOperator.lazyDisjunction(false, true),
+        BooleanOperator.lazyDisjunction(true, false),
+        BooleanOperator.lazyDisjunction(true, true)
     )
 
     printlnResult(list)
@@ -151,18 +151,18 @@ fun printlnResult(values:Array<Boolean>){
         println(x)
     }
 }
-
-fun lazyDisjunction(cond1:Boolean, cond2: Boolean)  =  cond1 || cond2
-
-fun lazyConjunction(cond1:Boolean, cond2: Boolean)  = cond1 && cond2
-
-fun negation(cond1: Boolean) = !cond1;
-
-}
 ```
 
-Math.kt
+BooleanOperator.kt
 ```kotlin
+class BooleanOperator{
+    companion object {
+        fun lazyDisjunction(cond1: Boolean, cond2: Boolean) = cond1 || cond2
+        fun lazyConjunction(cond1: Boolean, cond2: Boolean) = cond1 && cond2
+        fun negation(cond1: Boolean) = !cond1;
+    }
+}
+```
 
 Result 
 ```
