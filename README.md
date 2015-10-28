@@ -8,6 +8,7 @@ Learn the basics of getting started with kotlin
 ##Indexes
 * [Hello World](https://github.com/vicboma1/GettingStartedKotlin#hello-world)
 * [Variable Basics](https://github.com/vicboma1/GettingStartedKotlin#variable-basics)
+* [Strings](https://github.com/vicboma1/GettingStartedKotlin#strings)
 * [Boolean Operators](https://github.com/vicboma1/GettingStartedKotlin#boolean-operators)
 * [Conditional](https://github.com/vicboma1/GettingStartedKotlin#conditional)
 * [Function Basics](https://github.com/vicboma1/GettingStartedKotlin#function-basics)
@@ -105,7 +106,45 @@ null
 Victor Manuel Bolinches
 ```
 
-##Boolean Operations
+##Strings
+
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+    literals()
+    templates()
+}
+
+private fun templates() {
+    val number = 18
+    val name = "vicboma $number"
+    println(name)
+
+    println("$name.length = ${name.length}")
+
+    val price = "${'$'}9.99 = 9.99 dollars"
+    println(price)
+}
+
+private fun literals() {
+    val helloWorld = "Hello, world!"
+    println(helloWorld)
+    val str = "Hello, world!\n..."   // w/backslash
+    println(str)
+}
+```
+
+Result 
+```
+Hello, world!
+Hello, world!
+...
+vicboma 18
+vicboma 18.length = 10
+$9.99 = 9.99 dollars
+```
+
+##Boolean Operators
 
 Main.kt
 ```kotlin
@@ -117,8 +156,8 @@ fun main(args: Array<String>) {
 
 private fun negation() {
     val list = arrayOf(
-        negation(false),
-        negation(true)
+        BooleanOperator.negation(false),
+        BooleanOperator.negation(true)
     )
 
     printlnResult(list)
@@ -126,10 +165,10 @@ private fun negation() {
 
 private fun conjunction() {
     val list = arrayOf(
-            lazyConjunction(false, false),
-            lazyConjunction(false, true),
-            lazyConjunction(true, false),
-            lazyConjunction(true, true)
+         BooleanOperator.lazyConjunction(false, false),
+         BooleanOperator.lazyConjunction(false, true),
+         BooleanOperator.lazyConjunction(true, false),
+         BooleanOperator.lazyConjunction(true, true)
     )
 
     printlnResult(list)
@@ -137,10 +176,10 @@ private fun conjunction() {
 
 private fun disjunction() {
     val list = arrayOf(
-        lazyDisjunction(false, false),
-        lazyDisjunction(false, true),
-        lazyDisjunction(true, false),
-        lazyDisjunction(true, true)
+        BooleanOperator.lazyDisjunction(false, false),
+        BooleanOperator.lazyDisjunction(false, true),
+        BooleanOperator.lazyDisjunction(true, false),
+        BooleanOperator.lazyDisjunction(true, true)
     )
 
     printlnResult(list)
@@ -151,18 +190,18 @@ fun printlnResult(values:Array<Boolean>){
         println(x)
     }
 }
-
-fun lazyDisjunction(cond1:Boolean, cond2: Boolean)  =  cond1 || cond2
-
-fun lazyConjunction(cond1:Boolean, cond2: Boolean)  = cond1 && cond2
-
-fun negation(cond1: Boolean) = !cond1;
-
-}
 ```
 
-Math.kt
+BooleanOperator.kt
 ```kotlin
+class BooleanOperator{
+    companion object {
+        fun lazyDisjunction(cond1: Boolean, cond2: Boolean) = cond1 || cond2
+        fun lazyConjunction(cond1: Boolean, cond2: Boolean) = cond1 && cond2
+        fun negation(cond1: Boolean) = !cond1;
+    }
+}
+```
 
 Result 
 ```
