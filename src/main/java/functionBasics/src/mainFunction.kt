@@ -11,9 +11,22 @@ fun main(args: Array<String>) {
     println(addTwoNumbers1)
     val addTwoNumbersDefault = numberOperations.addTwoNumbersDefault(2)
     println(addTwoNumbersDefault)
+
     val reverseList = numberOperations.reverseList(arrayListOf(1, 2, 3)).asList()
     println(reverseList)
     val reverseList1 = numberOperations.reverseList(listOf(1, 2, 3, 4)).asList()
     println(reverseList1)
+
+    val sumLambda = numberOperations.sumLambda(2, 2)
+    println(sumLambda)
+
+    val _sumLambda : (Int, Int) -> Int = { x,y -> x + y}
+    val _sumInFunction = numberOperations.sumInFunction(9, 9, _sumLambda)
+    println(_sumInFunction)
+
+    val sumInFunction = numberOperations.sumInFunction(5, 9, { x, y -> x + y })
+    println(sumInFunction)
+
+
 }
 
