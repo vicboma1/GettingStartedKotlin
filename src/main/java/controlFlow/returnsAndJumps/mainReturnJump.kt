@@ -10,7 +10,6 @@ package controlFlow.returnsAndJumps
  *
  */
 fun main(args: Array<String>) {
-
     returnBasic()
     inlineReturn()
     implicitReturn()
