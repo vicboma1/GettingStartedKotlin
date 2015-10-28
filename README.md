@@ -91,6 +91,85 @@ null
 Victor Manuel Bolinches
 ```
 
+##Conditional
+
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+
+    val math : Math = Math()
+
+    val max = math.max(6, 7)
+    println(max)
+
+    val min = math.min(8, 0)
+    println(min)
+
+    val maxIn = math.maxIn(3, 6)
+    println(maxIn)
+
+    val minIn = math.minIn(4, 1)
+    println(minIn)
+
+    println(math.minIn(4, 4))
+    
+    
+    val maxLambda : (Int, Int) -> Int = { x , y -> if (x > y) x else y }
+    val minLambda : (Int, Int) -> Int = { x , y -> if (x > y) y else x }
+
+    val inFunctionMax = math.inFunction(100, 3, maxLambda)
+    val inFunctionMin = math.inFunction(100, 3, minLambda)
+
+    println(inFunctionMax)
+    println(inFunctionMin)
+}
+
+```
+
+Math.kt
+```kotlin
+class Math {
+
+    fun max(a: Int, b: Int): Int {
+        if (a > b) {
+            return a
+        } else {
+            return b
+        }
+    }
+
+    fun min(a: Int, b: Int): Int {
+        if (a > b) {
+            return b
+        } else {
+            return a
+        }
+    }
+
+    fun maxIn(a: Int, b: Int): Int = if(a > b) a else b
+
+    fun minIn(a: Int, b: Int): Int = if (a > b) b else a
+
+    //val max : (Int, Int) -> Int = { x , y -> if (x > y) x else y }
+    //val min : (Int, Int) -> Int = { x , y -> if (x > y) y else x }
+
+    fun inFunction(x : Int, y : Int, f:(Int, Int) -> Int) : Int {
+        return f(x,y)
+    }
+}
+```
+
+Result 
+```
+7
+0
+6
+1
+100
+3
+4
+```
+
 ##[Function Basics](https://youtu.be/-4XuESEe45c)
 
 Main.kt
@@ -109,6 +188,16 @@ fun main(args: Array<String>) {
     println(reverseList)
     val reverseList1 = numberOperations.reverseList(listOf(1, 2, 3, 4)).asList()
     println(reverseList1)
+    
+    val sumLambda = numberOperations.sumLambda(2, 2)
+    println(sumLambda)
+    
+    val _sumLambda : (Int, Int) -> Int = { x,y -> x + y}
+    val _sumInFunction = numberOperations.sumInFunction(9, 9, _sumLambda)
+    println(_sumInFunction)
+
+    val sumInFunction = numberOperations.sumInFunction(5, 9, { x, y -> x + y })
+    println(sumInFunction)
 }
 ```
 
@@ -129,6 +218,15 @@ public class NumberOperations{
     inline fun reverseList<reified T>(list : List<T>) : Array<T> {
         return list.reversed().toTypedArray();
     }
+    
+    Funciones de Orden Superior y Expresiones Lambda (como en Haskell :D)
+   
+    val sumLambda : (Int, Int) -> Int = { x,y -> x + y}
+   
+    fun sumInFunction(x : Int, y : Int, f:(Int, Int) -> Int) : Int {
+          return f(x,y)
+     }
+       
 }
 ```
 
@@ -139,6 +237,9 @@ Result
 2 + 0 = 2
 [1, 2, 3] = [3, 2, 1]
 [1, 2, 3, 4] = [4, 3, 2, 1]
+2 + 2 = 4
+9 + 9 = 18
+5 + 9 = 14
 ```
 
 ##[Class Basics](https://youtu.be/SI2HiSLDFFs)
