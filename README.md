@@ -11,6 +11,7 @@ Learn the basics of getting started with kotlin
 * [Strings](https://github.com/vicboma1/GettingStartedKotlin#strings)
 * [Boolean Operators](https://github.com/vicboma1/GettingStartedKotlin#boolean-operators)
 * [Conditional](https://github.com/vicboma1/GettingStartedKotlin#conditional)
+* [Control Flow](https://github.com/vicboma1/GettingStartedKotlin#control-flow)
 * [Function Basics](https://github.com/vicboma1/GettingStartedKotlin#function-basics)
 * [Class Basics](https://github.com/vicboma1/GettingStartedKotlin#class-basics)
 * [Data Classes](https://github.com/vicboma1/GettingStartedKotlin#data-classes)
@@ -299,6 +300,318 @@ Result
 100
 3
 4
+```
+##Control Flow
+
+####While
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+
+    var arrayAny = arrayOf(1,2,3,4,5)
+    withIterator(arrayAny)
+
+    var arraySafety = arrayOf<Any?>(1,2,3,4,5,null)
+    doWhile(arraySafety)
+
+    classic()
+}
+
+private fun classic() {
+    var i = 5
+    while (0 <= i) {
+        println(i--)
+    }
+}
+
+private fun doWhile(arraySafety: Array<Any?>) {
+    val iterator = arraySafety.iterator()
+    do {
+        val y = iterator.next()
+        println(y)
+    } while (y != null) // y is visible here!
+}
+
+private fun withIterator(arrayAny: Array<Int>) {
+    val iterator = arrayAny.iterator()
+    while (iterator.hasNext()) {
+        val next = iterator.next()
+        println(next)
+    }
+}
+```
+
+Result 
+```
+1
+2
+3
+4
+5
+
+1
+2
+3
+4
+5
+null
+
+5
+4
+3
+2
+1
+0
+```
+
+####For
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+
+    var arrayAny = arrayOf(12,2.3,45F,"Soy una String",true, null)
+    anIterator(arrayAny)
+    withBodyBlock(arrayAny)
+    withIndices(arrayAny)
+}
+
+private fun withIndices(arrayAny: Array<Any?>) {
+    for (i in arrayAny.indices)
+        println(arrayAny[i])
+}
+
+private fun anIterator(arrayAny: Array<Any?>) {
+    for (any in arrayAny)
+        println(any)
+}
+
+private fun withBodyBlock(arrayAny: Array<Any?>) {
+    for (any: Any? in arrayAny) {
+        print(any)
+        print("\n")
+    }
+}
+```
+Result
+```
+12
+2.3
+45.0
+Soy una String
+true
+null
+
+12
+2.3
+45.0
+Soy una String
+true
+null
+
+12
+2.3
+45.0
+Soy una String
+true
+null
+```
+
+
+####When
+
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+
+    var array = arrayOf(1,2,3)
+    for(i in array)
+        _whenDefault(i)
+
+    for(i in array)
+        whenCombined(i)
+
+    var arrayAny = arrayOf<Any?>(1,2.0,5F,"",true)
+    implicitCasts(arrayAny)
+
+    var arrayNumber = arrayOf(1,2,19,20,14,35,45)
+    expression(arrayNumber)
+}
+
+/**
+ * We can also check a value For being in or !in a range or a collection:
+ */
+private fun expression(arrayNumber: Array<Int>) {
+    val validNumbers = arrayOf(35)
+    for (obj in arrayNumber)
+        when (obj) {
+            in 1..10 -> println("x is in the range")
+            in validNumbers -> println("x is valid")
+            !in 10..20 -> println("x is outside the range")
+            else -> println("none of the above")
+        }
+}
+
+/**
+ * with patter matching
+ */
+private fun implicitCasts(arrayAny: Array<Any?>) {
+    for (obj in arrayAny)
+        when (obj) {
+            is String -> println("is String")
+            is Int -> println("is Int")
+            is Float -> println("is Float")
+            is Double -> println("is Double")
+            !is Boolean -> println("is not Boolean")
+            else -> println("is Boolean ")
+        }
+}
+
+
+/**
+ * If many cases should be handled in the same way, the branch conditions may be combined with a comma
+ */
+private fun whenCombined(i: Int) {
+    when (i) {
+        0, 1 -> println("x == 0 or x == 1")
+        else -> println("otherwise")
+    }
+}
+
+/**
+ * when replaces the switch operator of C-like languages
+ * when can be used either as an expression or as a statement
+ */
+private fun _whenDefault(x: Int) {
+    when (x) {
+        1 -> println("x == 1")
+        2 -> println("x == 2")
+        else -> {
+            // Note the block
+            println("x is neither 1 nor 2")
+        }
+    }
+}
+```
+
+Result
+```
+x == 1
+x == 2
+x is neither 1 nor 
+
+x == 0 or x == 1
+otherwise
+otherwise
+
+is Int
+is Double
+is Float
+is String
+is Boolean 
+
+x is in the range
+x is in the range
+none of the above
+none of the above
+none of the above
+x is valid
+x is outside the range
+
+```
+
+####Return and Jump
+Kotlin has three structural jump operators
+ * - return. By default returns from the nearest enclosing function or function expression.
+ * — break. Terminates the nearest enclosing loop.
+ * - continue. Proceeds to the next step of the nearest enclosing loop.
+ 
+```kotlin
+fun main(args: Array<String>) {
+
+    returnBasic()
+    inlineReturn()
+    implicitReturn()
+    breakLoopContinue()
+}
+
+private fun implicitReturn() {
+    println("Init implicit return")
+    listOf(1, 2, 3, 4, 5).forEach {
+        if (it == 2) {
+            println("Exit implicit return")
+            return@forEach
+        }
+        println(it)
+    }
+}
+
+private fun inlineReturn() {
+
+    println("Init inline return")
+    listOf(1, 2, 3, 4, 5).forEach lit@ {
+        if (it == 5) {
+            println("Exit inline return")
+            return@lit
+        }
+        println(it)
+    }
+}
+
+private fun returnBasic(): Unit {
+    println("Init Basic return")
+    for (i in 0..5) {
+        if (i == 5) {
+            println("Exit Basic return")
+            return
+        }
+        println(i)
+    }
+
+}
+
+private fun breakLoopContinue() {
+    println("Init Basic Loop")
+    Continue@ for (i in 1..100) {
+        for (j in 1..100) {
+            if (j === 50) {
+                break@Continue
+            }
+        }
+    }
+    println("Exit Basic Loop")
+}
+```
+
+Result
+```
+//returnBasic
+Init Basic return
+0
+1
+2
+3
+4
+Exit Basic return
+
+//inlineReturn
+Init inline return
+1
+2
+3
+4
+Exit inline return
+
+//implicitReturn
+Init implicit return
+1
+Exit implicit return
+3
+4
+5
+
+//breakLoopContinue
+Init breakLoopContinue Loop
+Exit breakLoopContinue Loop
 ```
 
 ##[Function Basics](https://youtu.be/-4XuESEe45c)
