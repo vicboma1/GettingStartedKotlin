@@ -8,6 +8,7 @@ Learn the basics of getting started with kotlin
 ##Indexes
 * [Hello World](https://github.com/vicboma1/GettingStartedKotlin#hello-world)
 * [Variable Basics](https://github.com/vicboma1/GettingStartedKotlin#variable-basics)
+* [Strings](https://github.com/vicboma1/GettingStartedKotlin#strings)
 * [Boolean Operators](https://github.com/vicboma1/GettingStartedKotlin#boolean-operators)
 * [Conditional](https://github.com/vicboma1/GettingStartedKotlin#conditional)
 * [Function Basics](https://github.com/vicboma1/GettingStartedKotlin#function-basics)
@@ -103,6 +104,44 @@ Victor
 Victor Bolinches
 null
 Victor Manuel Bolinches
+```
+
+##Strings
+
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+    literals()
+    templates()
+}
+
+private fun templates() {
+    val number = 18
+    val name = "vicboma $number"
+    println(name)
+
+    println("$name.length = ${name.length}")
+
+    val price = "${'$'}9.99 = 9.99 dollars"
+    println(price)
+}
+
+private fun literals() {
+    val helloWorld = "Hello, world!"
+    println(helloWorld)
+    val str = "Hello, world!\n..."   // w/backslash
+    println(str)
+}
+```
+
+Result 
+```
+Hello, world!
+Hello, world!
+...
+vicboma 18
+vicboma 18.length = 10
+$9.99 = 9.99 dollars
 ```
 
 ##Boolean Operators
