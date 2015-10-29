@@ -17,7 +17,7 @@ Learn the basics of getting started with kotlin
 * [Data Classes](https://github.com/vicboma1/GettingStartedKotlin#data-classes)
 * [Extension Function Basics](https://github.com/vicboma1/GettingStartedKotlin#extension-function-basics)
 * [Null Safety](https://github.com/vicboma1/GettingStartedKotlin#null-safety)
-
+* [Infix Function](https://github.com/vicboma1/GettingStartedKotlin#infix-function)
 
 
 
@@ -887,6 +887,57 @@ Exception in thread "main" kotlin.KotlinNullPointerException
 	at MainNullsafetyOperatorsKt.main(mainNullsafetyOperators.kt:39)
 ```
 
+## Infix Function
+
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+    val list = listOf(10, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5)
+
+    doubleResult(list)
+    filter(list)
+    map(list)
+}
+//infix without paren + brace
+private fun map(list: List<Int>) = list.filter{ it % 2 == 0 }.map{ it - 1 }.forEach{ println(it) }
+
+//infix without Dots & paren + brace
+private fun filter(list: List<Int>) = list filter { it % 2 == 0 } forEach {  println(it) }
+
+//infix with paren & brace
+private fun doubleResult(list: List<Int>) = list.forEach({ println(it * 2) })
+
+```
+
+Result
+```
+20
+-10
+-8
+-6
+-4
+-2
+0
+2
+4
+6
+8
+10
+
+10
+-4
+-2
+0
+2
+4
+
+9
+-5
+-3
+-1
+1
+3
+```
 
 Reference:
 * Main : http://kotlin.es
