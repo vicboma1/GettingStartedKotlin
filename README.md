@@ -8,6 +8,7 @@ Learn the basics of getting started with kotlin
 ##Indexes
 * [Hello World](https://github.com/vicboma1/GettingStartedKotlin#hello-world)
 * [Variable Basics](https://github.com/vicboma1/GettingStartedKotlin#variable-basics)
+* [Static Values](https://github.com/vicboma1/GettingStartedKotlin#static-values)
 * [Strings](https://github.com/vicboma1/GettingStartedKotlin#strings)
 * [Boolean Operators](https://github.com/vicboma1/GettingStartedKotlin#boolean-operators)
 * [Conditional](https://github.com/vicboma1/GettingStartedKotlin#conditional)
@@ -18,7 +19,6 @@ Learn the basics of getting started with kotlin
 * [Extension Function Basics](https://github.com/vicboma1/GettingStartedKotlin#extension-function-basics)
 * [Null Safety](https://github.com/vicboma1/GettingStartedKotlin#null-safety)
 * [Infix Function](https://github.com/vicboma1/GettingStartedKotlin#infix-function)
-
 
 
 ## [Hello World](https://youtu.be/iMMBrcabSOI)
@@ -117,6 +117,33 @@ Victor
 Victor Bolinches
 null
 Victor Manuel Bolinches
+```
+##Static Values
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+    start()
+    stop()
+}
+
+fun start() = println("State static: ${State.START}")
+fun stop()  = println("State static: ${State.STOP}")
+```
+
+State.kt
+```kotlin
+public class State {
+    companion object {
+        val START = 1
+        val STOP = 0
+    }
+}
+```
+
+Result
+```
+State static = 0
+State static = 1
 ```
 
 ##Strings
