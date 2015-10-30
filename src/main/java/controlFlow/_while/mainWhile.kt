@@ -4,14 +4,19 @@ package controlFlow._while
  * Created by vicboma on 28/10/15.
  */
 fun main(args: Array<String>) {
-
-    var arrayAny = arrayOf(1,2,3,4,5)
-    withIterator(arrayAny)
-
-    var arraySafety = arrayOf<Any?>(1,2,3,4,5,null)
-    doWhile(arraySafety)
-
+    ArrayWithIterator()
+    ArrayDoWhile()
     classic()
+}
+
+private fun ArrayDoWhile() {
+    var arraySafety = arrayOf<Any?>(1, 2, 3, 4, 5, null)
+    doWhile(arraySafety)
+}
+
+private fun ArrayWithIterator() {
+    var arrayAny = arrayOf(1, 2, 3, 4, 5)
+    withIterator(arrayAny)
 }
 
 private fun classic() {

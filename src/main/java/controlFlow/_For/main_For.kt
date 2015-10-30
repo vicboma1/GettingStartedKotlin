@@ -4,7 +4,6 @@ package controlFlow._For
  * Created by vicboma on 28/10/15.
  */
 fun main(args: Array<String>) {
-
     var arrayAny = arrayOf(12,2.3,45F,"Soy una String",true, null)
     anIterator(arrayAny)
     withBodyBlock(arrayAny)

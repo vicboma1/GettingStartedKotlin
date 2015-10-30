@@ -4,7 +4,6 @@ import booleanOperators.src.BooleanOperator
  * Created by vicboma on 27/10/15.
  */
 fun main(args: Array<String>) {
-
     disjunction()
     conjunction()
     negation()

@@ -2,6 +2,10 @@
  * Created by vicboma on 27/10/15.
  */
 fun main(args: Array<String>) {
+    templateExamples()
+}
+
+private fun templateExamples() {
     val customer1 = Customer(1, "victor", "victorbolinchesmarin@gmail.com")
     val customer2 = Customer(1, "victor", "victorbolinchesmarin@gmail.com")
     val customer3 = customer1;
@@ -20,6 +24,4 @@ fun main(args: Array<String>) {
     //copy() function (see below).
     println(dataCustomer4.equals(dataCustomer5))
     println(dataCustomer4)
-
-
 }

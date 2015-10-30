@@ -2,7 +2,6 @@
  * Created by vicboma on 26/10/15.
  */
 fun main(args: Array<String>) {
-
     immutableValue()
     mutableValue()
     nullableValue()

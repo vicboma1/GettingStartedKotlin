@@ -26,11 +26,23 @@ Learn the basics of getting started with kotlin
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
-    val name = "Victor"
     val printHelloWorld = PrintHelloWorld()
-    printHelloWorld.basic(name)
-    printHelloWorld.basicEmpty()
+    basic(printHelloWorld)
+    basicEmpty(printHelloWorld)
+    empty(printHelloWorld)
+}
+
+private fun empty(printHelloWorld: PrintHelloWorld) {
     printHelloWorld.empty()
+}
+
+private fun basicEmpty(printHelloWorld: PrintHelloWorld) {
+    printHelloWorld.basicEmpty()
+}
+
+private fun basic(printHelloWorld: PrintHelloWorld) {
+    val name = "Victor"
+    printHelloWorld.basic(name)
 }
 ```
 
@@ -228,26 +240,17 @@ true  = false
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
-
     val math : Math = Math()
+    max(math)
+    min(math)
+    maxIn(math)
+    minIn(math)
+    lambdas(math)
+}
 
-    val max = math.max(6, 7)
-    println(max)
-
-    val min = math.min(8, 0)
-    println(min)
-
-    val maxIn = math.maxIn(3, 6)
-    println(maxIn)
-
-    val minIn = math.minIn(4, 1)
-    println(minIn)
-
-    println(math.minIn(4, 4))
-    
-    
-    val maxLambda : (Int, Int) -> Int = { x , y -> if (x > y) x else y }
-    val minLambda : (Int, Int) -> Int = { x , y -> if (x > y) y else x }
+private fun lambdas(math: Math) {
+    val maxLambda: (Int, Int) -> Int = { x, y -> if (x > y) x else y }
+    val minLambda: (Int, Int) -> Int = { x, y -> if (x > y) y else x }
 
     val inFunctionMax = math.inFunction(100, 3, maxLambda)
     val inFunctionMin = math.inFunction(100, 3, minLambda)
@@ -256,12 +259,33 @@ fun main(args: Array<String>) {
     println(inFunctionMin)
 }
 
+private fun minIn(math: Math) {
+    val minIn = math.minIn(4, 1)
+    val minIn1 = math.minIn(4, 4)
+    println(minIn)
+    println(minIn1)
+}
+
+private fun maxIn(math: Math) {
+    val maxIn = math.maxIn(3, 6)
+    println(maxIn)
+}
+
+private fun min(math: Math) {
+    val min = math.min(8, 0)
+    println(min)
+}
+
+private fun max(math: Math) {
+    val max = math.max(6, 7)
+    println(max)
+}
+
 ```
 
 Math.kt
 ```kotlin
 class Math {
-
     fun max(a: Int, b: Int): Int {
         if (a > b) {
             return a
@@ -307,14 +331,19 @@ Result
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
-
-    var arrayAny = arrayOf(1,2,3,4,5)
-    withIterator(arrayAny)
-
-    var arraySafety = arrayOf<Any?>(1,2,3,4,5,null)
-    doWhile(arraySafety)
-
+    ArrayWithIterator()
+    ArrayDoWhile()
     classic()
+}
+
+private fun ArrayDoWhile() {
+    var arraySafety = arrayOf<Any?>(1, 2, 3, 4, 5, null)
+    doWhile(arraySafety)
+}
+
+private fun ArrayWithIterator() {
+    var arrayAny = arrayOf(1, 2, 3, 4, 5)
+    withIterator(arrayAny)
 }
 
 private fun classic() {
@@ -422,19 +451,31 @@ null
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
-
     var array = arrayOf(1,2,3)
-    for(i in array)
-        _whenDefault(i)
+    forWhenDefault(array)
+    forWhenCombined(array)
+    forImplicitCast()
+    expression()
+}
 
-    for(i in array)
-        whenCombined(i)
-
-    var arrayAny = arrayOf<Any?>(1,2.0,5F,"",true)
-    implicitCasts(arrayAny)
-
-    var arrayNumber = arrayOf(1,2,19,20,14,35,45)
+private fun expression() {
+    var arrayNumber = arrayOf(1, 2, 19, 20, 14, 35, 45)
     expression(arrayNumber)
+}
+
+private fun forImplicitCast() {
+    var arrayAny = arrayOf<Any?>(1, 2.0, 5F, "", true)
+    implicitCasts(arrayAny)
+}
+
+private fun forWhenCombined(array: Array<Int>) {
+    for (i in array)
+        whenCombined(i)
+}
+
+private fun forWhenDefault(array: Array<Int>) {
+    for (i in array)
+        _whenDefault(i)
 }
 
 /**
@@ -527,7 +568,6 @@ Kotlin has three structural jump operators
  
 ```kotlin
 fun main(args: Array<String>) {
-
     returnBasic()
     inlineReturn()
     implicitReturn()
@@ -619,29 +659,57 @@ Exit breakLoopContinue Loop
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
-
     val numberOperations = NumberOperations()
 
-    val addTwoNumbers = numberOperations.addTwoNumbers(first = 2, second = 5)
-    println(addTwoNumbers)
-    val addTwoNumbers1 = numberOperations.addTwoNumbers(second = 5, first = 2)
-    println(addTwoNumbers1)
-    val addTwoNumbersDefault = numberOperations.addTwoNumbersDefault(2)
-    println(addTwoNumbersDefault)
-    val reverseList = numberOperations.reverseList(arrayListOf(1, 2, 3)).asList()
-    println(reverseList)
-    val reverseList1 = numberOperations.reverseList(listOf(1, 2, 3, 4)).asList()
-    println(reverseList1)
-    
-    val sumLambda = numberOperations.sumLambda(2, 2)
-    println(sumLambda)
-    
-    val _sumLambda : (Int, Int) -> Int = { x,y -> x + y}
-    val _sumInFunction = numberOperations.sumInFunction(9, 9, _sumLambda)
-    println(_sumInFunction)
+    twoNumbers(numberOperations)
+    twoNumberReverse(numberOperations)
+    addTwoNumbersDefault(numberOperations)
+    reverseList(numberOperations)
+    reverseList2(numberOperations)
+    sumLambda(numberOperations)
+    sumLambdainFunction(numberOperations)
+    sumInlineOperation(numberOperations)
+}
 
+private fun sumInlineOperation(numberOperations: NumberOperations) {
     val sumInFunction = numberOperations.sumInFunction(5, 9, { x, y -> x + y })
     println(sumInFunction)
+}
+
+private fun sumLambdainFunction(numberOperations: NumberOperations) {
+    val _sumLambda: (Int, Int) -> Int = { x, y -> x + y }
+    val _sumInFunction = numberOperations.sumInFunction(9, 9, _sumLambda)
+    println(_sumInFunction)
+}
+
+private fun sumLambda(numberOperations: NumberOperations) {
+    val sumLambda = numberOperations.sumLambda(2, 2)
+    println(sumLambda)
+}
+
+private fun reverseList2(numberOperations: NumberOperations) {
+    val reverseList1 = numberOperations.reverseList(listOf(1, 2, 3, 4)).asList()
+    println(reverseList1)
+}
+
+private fun reverseList(numberOperations: NumberOperations) {
+    val reverseList = numberOperations.reverseList(arrayListOf(1, 2, 3)).asList()
+    println(reverseList)
+}
+
+private fun addTwoNumbersDefault(numberOperations: NumberOperations) {
+    val addTwoNumbersDefault = numberOperations.addTwoNumbersDefault(2)
+    println(addTwoNumbersDefault)
+}
+
+private fun twoNumbers(numberOperations: NumberOperations) {
+    val addTwoNumbers = numberOperations.addTwoNumbers(first = 2, second = 5)
+    println(addTwoNumbers)
+}
+
+private fun twoNumberReverse(numberOperations: NumberOperations) {
+    val addTwoNumbers1 = numberOperations.addTwoNumbers(second = 5, first = 2)
+    println(addTwoNumbers1)
 }
 ```
 
@@ -754,8 +822,11 @@ Employee ToString: Employee@4cc77c2e
 
 Main.kt
 ```kotlin
-
 fun main(args: Array<String>) {
+    templateExamples()
+}
+
+private fun templateExamples() {
     val customer1 = Customer(1, "victor", "victorbolinchesmarin@gmail.com")
     val customer2 = Customer(1, "victor", "victorbolinchesmarin@gmail.com")
     val customer3 = customer1;
@@ -767,8 +838,7 @@ fun main(args: Array<String>) {
     println(customer1.equals(customer2))  //equals()
     println(customer1.equals(customer3))
 
-    //The compiler automatically derives the following members from all 
-    //properties declared in the primary constructor:
+    //The compiler automatically derives the following members from all properties declared in the primary constructor:
     //equals()/hashCode() pair,
     //toString() of the form "User(name=John, age=42)",
     //componentN() functions corresponding to the properties in their order or declaration,
@@ -811,11 +881,20 @@ DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
+    val str = functionClassic()
+    functionInvokeInstance(str)
+}
+
+private fun functionInvokeInstance(str: String) {
+    val convertSpacesToUnderscoresInvokeInstanceString = str.convertSpacesToUnderscoresInvokeInstanceString()
+    println(convertSpacesToUnderscoresInvokeInstanceString)
+}
+
+private fun functionClassic(): String {
     val str = "this is my text"
     val convertSpacesToUnderscores = convertSpacesToUnderscores(str);
     println(convertSpacesToUnderscores)
-    val convertSpacesToUnderscoresInvokeInstanceString = str.convertSpacesToUnderscoresInvokeInstanceString()
-    println(convertSpacesToUnderscoresInvokeInstanceString)
+    return str
 }
 
 
@@ -839,41 +918,49 @@ Invoke Instance String: this_is_my_text
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
+    checkingForNullcondition()
+    val listMutable = safetyAccess()
+    elvisOperator(listMutable)
+    safetyCasts()
+    specialOperator()
+}
 
-    //Checking for Null in conditions
-    val listImmutable = listOf(1,2,3,4)
+private fun specialOperator() {
+    val str: String? = null
+    val len = str!!.length  //accedemos a la propiedad, pero dará una excepción.
+}
 
-    val size = listImmutable.size
-    if (listImmutable != null && size > 0)
-        println("Array of size $size")
-    else
-        println("Empty Array")
+private fun safetyCasts() {
+    val a: Double = 2.0
+    val aInt: Int? = a as? Int
+    println(aInt)
+}
 
+private fun elvisOperator(listMutable: Array<Int>) {
+    val result = listMutable?.size ?: -1
+    println(result)
+}
 
-    //Safe Calls - Any"?".property
-    val listMutable = arrayOf(1,2,3,4)
+//Safe Calls - Any"?".property
+private fun safetyAccess(): Array<Int> {
+    val listMutable = arrayOf(1, 2, 3, 4)
 
     val _size = listMutable?.size
     if (listMutable != null && _size > 0)
         println("Array of size $_size")
     else
         println("Empty Array")
+    return listMutable
+}
 
+private fun checkingForNullcondition() {
+    val listImmutable = listOf(1, 2, 3, 4)
 
-    //Elvis Operator
-    val result = listMutable?.size ?: -1
-    println(result)
-
-
-    //Safe Casts
-    val a : Double = 2.0
-    val aInt: Int? = a as? Int
-    println(aInt)
-
-
-    //The !! Operator
-    val str:String? = null
-    val len = str!!.length  //accedemos a la propiedad, pero dará una excepción.
+    val size = listImmutable.size
+    if (listImmutable != null && size > 0)
+        println("Array of size $size")
+    else
+        println("Empty Array")
 }
 ```
 

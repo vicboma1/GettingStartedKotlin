@@ -3,19 +3,31 @@ package controlFlow._when
  * Created by vicboma on 27/10/15.
  */
 fun main(args: Array<String>) {
-
     var array = arrayOf(1,2,3)
-    for(i in array)
-        _whenDefault(i)
+    forWhenDefault(array)
+    forWhenCombined(array)
+    forImplicitCast()
+    expression()
+}
 
-    for(i in array)
-        whenCombined(i)
-
-    var arrayAny = arrayOf<Any?>(1,2.0,5F,"",true)
-    implicitCasts(arrayAny)
-
-    var arrayNumber = arrayOf(1,2,19,20,14,35,45)
+private fun expression() {
+    var arrayNumber = arrayOf(1, 2, 19, 20, 14, 35, 45)
     expression(arrayNumber)
+}
+
+private fun forImplicitCast() {
+    var arrayAny = arrayOf<Any?>(1, 2.0, 5F, "", true)
+    implicitCasts(arrayAny)
+}
+
+private fun forWhenCombined(array: Array<Int>) {
+    for (i in array)
+        whenCombined(i)
+}
+
+private fun forWhenDefault(array: Array<Int>) {
+    for (i in array)
+        _whenDefault(i)
 }
 
 /**
