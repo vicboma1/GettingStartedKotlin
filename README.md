@@ -1,7 +1,7 @@
 # Getting Started Kotlin
 Learn the basics of getting started with kotlin
 
-[![Build](https://travis-ci.org/vicboma1/GettingStartedKotlin.svg?branch=master)](http://kotlinlang.org) [![Kotlin](https://img.shields.io/badge/Kotlin-1.0.0--beta--1038-blue.svg)](http://kotlinlang.org) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/)
+[![Build](https://travis-ci.org/vicboma1/GettingStartedKotlin.svg?branch=master)](https://travis-ci.org/vicboma1/GettingStartedKotlin) [![Kotlin](https://img.shields.io/badge/Kotlin-1.0.0--beta--1038-blue.svg)](http://kotlinlang.org) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/coveralls-maven-plugin/)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicboma1/gettingstartedkotlin/trend.png)](https://bitdeli.com/free "Bitdeli Badge") [![Analytics](https://ga-beacon.appspot.com/UA-68658653-5/gettingstartedkotlin/readme)](https://github.com/igrigorik/ga-beacon)
 
 
