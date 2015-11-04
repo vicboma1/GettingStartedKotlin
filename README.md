@@ -16,6 +16,7 @@ Learn the basics of getting started with kotlin
 * [Function Basics](https://github.com/vicboma1/GettingStartedKotlin#function-basics)
 * [Class Basics](https://github.com/vicboma1/GettingStartedKotlin#class-basics)
 * [Data Classes](https://github.com/vicboma1/GettingStartedKotlin#data-classes)
+* [Interface](https://github.com/vicboma1/GettingStartedKotlin#interface)
 * [Extension Function Basics](https://github.com/vicboma1/GettingStartedKotlin#extension-function-basics)
 * [Null Safety](https://github.com/vicboma1/GettingStartedKotlin#null-safety)
 * [Infix Function](https://github.com/vicboma1/GettingStartedKotlin#infix-function)
@@ -902,6 +903,12 @@ true
 true
 DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
 ```
+##[Interface]()
+Main.kt
+```kotlin
+
+```
+
 
 ##[Extension Function Basics](https://youtu.be/SMzNduaGcuo)
 
