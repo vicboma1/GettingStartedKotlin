@@ -904,7 +904,7 @@ true
 true
 DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
 ```
-##[Interface]()
+##Interface
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
@@ -948,7 +948,7 @@ Z - buzz
 ```
 
 
-##[Herencia]()
+##Herencia
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
