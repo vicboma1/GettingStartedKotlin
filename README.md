@@ -17,6 +17,7 @@ Learn the basics of getting started with kotlin
 * [Class Basics](https://github.com/vicboma1/GettingStartedKotlin#class-basics)
 * [Data Classes](https://github.com/vicboma1/GettingStartedKotlin#data-classes)
 * [Interface](https://github.com/vicboma1/GettingStartedKotlin#interface)
+* [Herencia](https://github.com/vicboma1/GettingStartedKotlin#herencia)
 * [Extension Function Basics](https://github.com/vicboma1/GettingStartedKotlin#extension-function-basics)
 * [Null Safety](https://github.com/vicboma1/GettingStartedKotlin#null-safety)
 * [Infix Function](https://github.com/vicboma1/GettingStartedKotlin#infix-function)
@@ -906,9 +907,146 @@ DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
 ##[Interface]()
 Main.kt
 ```kotlin
-
+fun main(args: Array<String>) {
+        val z = Z("I am Z")
+        val zToString = z.toString()
+        println(zToString)
+        val zFizz = z.fiz()
+        println(zFizz)
+        val zBuzz = z.buzz()
+        println(zBuzz)  
+}
+```
+X.kt
+```kotlin
+interface X{
+    fun fiz() : String
+}
 ```
 
+A.kt
+```kotlin
+interface A{
+  fun buzz() :String
+}
+```
+
+Z.kt
+```kotlin
+open class Z(val arg:String) : A, X  {
+   override fun toString() = "ToString() : $arg"
+   override fun fiz() : String = "Z - fiz"
+   override fun buzz() : String = "Z - buzz"
+}
+```
+
+Result
+```
+ToString() : I am Z
+Z - fiz
+Z - buzz
+```
+
+
+##[Herencia]()
+Main.kt
+```kotlin
+fun main(args: Array<String>) {
+        val b = B("I am B")
+        val bToString = b.toString()
+        println(bToString)
+        val bFizz = b.fiz()
+        println(bFizz)
+        val bBuzz = b.buzz()
+        println(bBuzz)
+        
+        val bValue = b.fizBuzz
+        println("b.class.toString() $bValue")
+            
+        val c = C()
+        val cToString = c.toString()
+        println(cToString)
+        val cFizz = c.fiz()
+        println(cFizz)
+        val cBuzz = c.buzz()
+        println(cBuzz)
+        val cValue = c.fizBuzz
+        println("c.class.toString() $cValue")
+        
+        val h = H("I am H")
+        val hToString = h.toString()
+        println(cToString)
+        val hFizz = h.fiz()
+        println(hFizz)
+        val hBuzz = h.buzz()
+        println(hBuzz) 
+}
+```
+
+X.kt
+```kotlin
+interface X{
+    fun fiz() : String
+}
+```
+
+A.kt
+```kotlin
+interface A{
+  fun buzz() :String
+}
+```
+
+Z.kt
+```kotlin
+open class Z(val arg:String) : A, X  {
+   override fun toString() = "ToString() : $arg"
+   override fun fiz() : String = "Z - fiz"
+   override fun buzz() : String = "Z - buzz"
+}
+```
+
+B.kt
+```kotlin
+class B(val name:String) :  Z("Z"), W {  
+    override val fizBuzz : Int = 29
+    override fun fiz() : String = "B - fiz"
+    override fun buzz() : String = "B - buzz"
+    override fun toString() : String  = "ToString() : ${this.name} and my parent is ${super.toString()}"  
+}
+```
+
+C.kt
+```kotlin
+class C : Z("I am Z"), W {
+    override val fizBuzz : Int = 92
+    override fun fiz() : String =  "C - fiz" 
+    override fun buzz() : String = "C - buzz"
+}
+```
+
+H.kt
+```kotlin
+class H(val name:String):Z("I am Z") {
+      override fun fiz() :String = super.fiz()
+      override fun buzz() : String = super.buzz()
+}
+```
+
+Result
+```
+ToString() : I am B and my parent is ToString() : Z
+B - fiz
+B - buzz
+b.class.toString() 29
+ToString() : I am Z
+C - fiz
+C - buzz
+c.class.toString() 92
+ToString() : I am Z
+Z - fiz
+Z - buzz
+```
 
 ##[Extension Function Basics](https://youtu.be/SMzNduaGcuo)
 
