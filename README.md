@@ -6,6 +6,8 @@ Learn the basics of getting started with kotlin
 
 --->>>   [Repo: Kotlin Koans](https://github.com/vicboma1/Kotlin-Koans)   <<<---
 
+--->>>   [Repo: Problems Kotlin](https://github.com/vicboma1/Kotlin-Examples-Problems/blob/master/README.md)   <<<---
+
 ##Indexes
 * [Hello World](https://github.com/vicboma1/GettingStartedKotlin#hello-world)
 * [Variable Basics](https://github.com/vicboma1/GettingStartedKotlin#variable-basics)
