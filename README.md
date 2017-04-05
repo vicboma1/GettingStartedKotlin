@@ -11,7 +11,7 @@ Learn the basics of getting started with kotlin
 --->>>   [Repo: GameBoy Emulator Enviroment](https://github.com/vicboma1/GameBoyEmulatorEnvironment)   <<<---
 
 
-##Indexes
+## Indexes
 * [Hello World](https://github.com/vicboma1/GettingStartedKotlin#hello-world)
 * [Variable Basics](https://github.com/vicboma1/GettingStartedKotlin#variable-basics)
 * [Static Values](https://github.com/vicboma1/GettingStartedKotlin#static-values)
@@ -79,7 +79,7 @@ Hello World
 Hello World 
 ```
 
-##[Variable Basics](https://youtu.be/bklpMxuzCWU)
+## [Variable Basics](https://youtu.be/bklpMxuzCWU)
 
 Main.kt
 ```kotlin
@@ -126,7 +126,7 @@ Victor Bolinches
 null
 Victor Manuel Bolinches
 ```
-##Static Values
+## Static Values
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
@@ -154,7 +154,7 @@ State static = 0
 State static = 1
 ```
 
-##Strings
+## Strings
 
 Main.kt
 ```kotlin
@@ -192,7 +192,7 @@ vicboma 18.length = 10
 $9.99 = 9.99 dollars
 ```
 
-##Boolean Operators
+## Boolean Operators
 
 Main.kt
 ```kotlin
@@ -270,7 +270,7 @@ false = true
 true  = false
 ```
 
-##Conditional
+## Conditional
 
 Main.kt
 ```kotlin
@@ -360,9 +360,9 @@ Result
 3
 4
 ```
-##Control Flow
+## Control Flow
 
-####While
+#### While
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
@@ -428,7 +428,7 @@ null
 0
 ```
 
-####For
+#### For
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
@@ -481,7 +481,7 @@ null
 ```
 
 
-####When
+#### When
 
 Main.kt
 ```kotlin
@@ -595,7 +595,7 @@ x is outside the range
 
 ```
 
-####Return and Jump
+#### Return and Jump
 Kotlin has three structural jump operators
  * - return. By default returns from the nearest enclosing function or function expression.
  * — break. Terminates the nearest enclosing loop.
@@ -689,7 +689,7 @@ Init breakLoopContinue Loop
 Exit breakLoopContinue Loop
 ```
 
-##[Function Basics](https://youtu.be/-4XuESEe45c)
+## [Function Basics](https://youtu.be/-4XuESEe45c)
 
 Main.kt
 ```kotlin
@@ -789,7 +789,7 @@ Result
 5 + 9 = 14
 ```
 
-##[Class Basics](https://youtu.be/SI2HiSLDFFs)
+## [Class Basics](https://youtu.be/SI2HiSLDFFs)
 
 Main.kt
 ```kotlin
@@ -853,7 +853,7 @@ Id : 1221  Name: Vicboma
 Employee ToString: Employee@4cc77c2e
 ```
 
-##[Data Classes](https://youtu.be/GhwZNoQqejQ)
+## [Data Classes](https://youtu.be/GhwZNoQqejQ)
 
 Main.kt
 ```kotlin
@@ -910,7 +910,7 @@ true
 true
 DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
 ```
-##Interface
+## Interface
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
@@ -954,7 +954,7 @@ Z - buzz
 ```
 
 
-##Herencia
+## Herencia
 Main.kt
 ```kotlin
 fun main(args: Array<String>) {
@@ -1054,7 +1054,7 @@ Z - fiz
 Z - buzz
 ```
 
-##[Extension Function Basics](https://youtu.be/SMzNduaGcuo)
+## [Extension Function Basics](https://youtu.be/SMzNduaGcuo)
 
 Main.kt
 ```kotlin
