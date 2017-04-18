@@ -23,6 +23,7 @@ Learn the basics of getting started with kotlin
 * [Basic Functions](https://github.com/vicboma1/GettingStartedKotlin#basic-functions)
 * [Basic Classes](https://github.com/vicboma1/GettingStartedKotlin#basic-classes)
 * [Data Classes](https://github.com/vicboma1/GettingStartedKotlin#data-classes)
+* [Singleton Class](https://github.com/vicboma1/GettingStartedKotlin#singleton-class)
 * [Properties](https://github.com/vicboma1/GettingStartedKotlin#properties)
 * [Interface](https://github.com/vicboma1/GettingStartedKotlin#interface)
 * [Herencia](https://github.com/vicboma1/GettingStartedKotlin#herencia)
@@ -934,6 +935,63 @@ false
 true
 true
 DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
+```
+
+## Singleton Class
+
+```java
+public class Singleton {
+
+    private String b;
+    private static Singleton instance;
+	
+    private Singleton() {
+    	System.out.println("This "+this+" is a singleton")
+    }
+    
+    public static Singleton getInstance() {
+        if (instance == null) 
+            instance = new Singleton();
+       
+        return instance;
+    }
+    
+    public void setB(String b) { this.b = b;}
+    public String getB() { return this.b; }
+}
+
+---------
+final Singleton first = new Singleton()       
+first.setB("hello singleton"=
+
+String second =  new Singleton()       
+println(second.getB())      
+
+```
+
+```kotlin
+object Singleton {
+    init {
+        println("This ($this) is a singleton")
+    }
+    
+    var b:String? = null
+}
+
+---------
+
+var first = Singleton       
+first.b = "hello singleton"
+
+var second = Singleton
+println(second.b)       
+
+```
+
+Result
+```
+This (Singobj@728938a9) is a singleton
+hello singleton
 ```
 
 ## Properties
