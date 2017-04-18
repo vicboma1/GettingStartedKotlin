@@ -19,6 +19,7 @@ Learn the basics of getting started with kotlin
 * [Boolean Operators](https://github.com/vicboma1/GettingStartedKotlin#boolean-operators)
 * [Conditional](https://github.com/vicboma1/GettingStartedKotlin#conditional)
 * [Control Flow](https://github.com/vicboma1/GettingStartedKotlin#control-flow)
+* [Constructors](https://github.com/vicboma1/GettingStartedKotlin#constructors)
 * [Basic Functions](https://github.com/vicboma1/GettingStartedKotlin#basic-functions)
 * [Basic Classes](https://github.com/vicboma1/GettingStartedKotlin#basic-classes)
 * [Data Classes](https://github.com/vicboma1/GettingStartedKotlin#data-classes)
@@ -688,6 +689,29 @@ Exit implicit return
 //breakLoopContinue
 Init breakLoopContinue Loop
 Exit breakLoopContinue Loop
+```
+## Constructors
+
+Primary 
+```kotlin
+class MyView (ctx: Context): View(ctx) {
+   ...
+}
+```  
+
+Secundary
+```kotlin
+class MyView : View {
+    constructor(ctx: Context) : super(ctx)
+    constructor(ctx: Context, attrs: AttributeSet) : super(ctx, attrs)
+}
+```
+
+internal
+```kotlin
+class MyView internal constructor(ctx: Context) : View (ctx) {
+   ...
+}
 ```
 
 ## [Basics Functions ](https://youtu.be/-4XuESEe45c)
