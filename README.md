@@ -13,7 +13,7 @@ Learn the basics of getting started with kotlin
 
 ## Indexes
 * [Hello World](https://github.com/vicboma1/GettingStartedKotlin#hello-world)
-* [Variable Basics](https://github.com/vicboma1/GettingStartedKotlin#variable-basics)
+* [Basic Variables](https://github.com/vicboma1/GettingStartedKotlin#variable-basics)
 * [Static Values](https://github.com/vicboma1/GettingStartedKotlin#static-values)
 * [Strings](https://github.com/vicboma1/GettingStartedKotlin#strings)
 * [Boolean Operators](https://github.com/vicboma1/GettingStartedKotlin#boolean-operators)
@@ -79,7 +79,7 @@ Hello World
 Hello World 
 ```
 
-## [Variable Basics](https://youtu.be/bklpMxuzCWU)
+## [Basic Variables](https://youtu.be/bklpMxuzCWU)
 
 Main.kt
 ```kotlin
@@ -689,7 +689,7 @@ Init breakLoopContinue Loop
 Exit breakLoopContinue Loop
 ```
 
-## [Function Basics](https://youtu.be/-4XuESEe45c)
+## [Basics Functions ](https://youtu.be/-4XuESEe45c)
 
 Main.kt
 ```kotlin
@@ -789,7 +789,7 @@ Result
 5 + 9 = 14
 ```
 
-## [Class Basics](https://youtu.be/SI2HiSLDFFs)
+## [Basic Classes](https://youtu.be/SI2HiSLDFFs)
 
 Main.kt
 ```kotlin
