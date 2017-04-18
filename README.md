@@ -22,6 +22,7 @@ Learn the basics of getting started with kotlin
 * [Basic Functions](https://github.com/vicboma1/GettingStartedKotlin#function-basics)
 * [Basic Classes](https://github.com/vicboma1/GettingStartedKotlin#class-basics)
 * [Data Classes](https://github.com/vicboma1/GettingStartedKotlin#data-classes)
+* [Propierties](https://github.com/vicboma1/GettingStartedKotlin#propierties)
 * [Interface](https://github.com/vicboma1/GettingStartedKotlin#interface)
 * [Herencia](https://github.com/vicboma1/GettingStartedKotlin#herencia)
 * [Extension Function Basics](https://github.com/vicboma1/GettingStartedKotlin#extension-function-basics)
@@ -910,6 +911,18 @@ true
 true
 DataCustomer(id=1, name=victor, email=victorbolinchesmarin@gmail.com)
 ```
+
+## Propierties
+```kotlin
+class Rectangle(val height: Int, val width: Int) {
+    val isSquare: Boolean
+        get() = (height == width)
+	set(value) 
+            field = value
+}
+
+```
+
 ## Interface
 Main.kt
 ```kotlin
