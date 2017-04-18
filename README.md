@@ -707,7 +707,7 @@ class MyView : View {
 }
 ```
 
-internal
+Internal
 ```kotlin
 class MyView internal constructor(ctx: Context) : View (ctx) {
    ...
