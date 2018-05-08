@@ -12,6 +12,9 @@ Learn the basics of getting started with kotlin
 
 --->>>   [Repo: Kotlin Mobile](https://github.com/vicboma1/KotlinMobilePoC_MasterUV2018)   <<<---
 
+--->>> [Repo: Kotlin JavaScript](https://github.com/vicboma1/kotlinJavaScript)  <<<---
+
+
 ## Indexes
 * [Hello World](https://github.com/vicboma1/GettingStartedKotlin#hello-world)
 * [Basic Variables](https://github.com/vicboma1/GettingStartedKotlin#basic-variables)
