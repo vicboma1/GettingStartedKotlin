@@ -1,4 +1,5 @@
-language: kotlin
+dist: trusty
+language: java
 sudo: false
 notifications:
   email:
@@ -11,6 +12,9 @@ cache:
 # use operating systems.
 os:
   - linux
+  
+jdk:
+  - openjdk11
   
 script:
   - mvn test -f ./pom.xml
