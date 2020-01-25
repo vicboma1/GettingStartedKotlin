@@ -11,10 +11,6 @@ cache:
 # use operating systems.
 os:
   - linux
-
-jdk:
-  - oraclejdk9
-
+  
 script:
-  - jdk_switcher use oraclejdk9
   - mvn test -f ./pom.xml
