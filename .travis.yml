@@ -13,8 +13,8 @@ os:
   - linux
 
 jdk:
-  - oraclejdk8
+  - oraclejdk9
 
 script:
-  - jdk_switcher use oraclejdk8
+  - jdk_switcher use oraclejdk9
   - mvn test -f ./pom.xml
