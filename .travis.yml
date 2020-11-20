@@ -7,11 +7,6 @@ addons:
   apt:
     packages:
       - tree
-
-before_install:
-  - rvm install 2.2.5
-  - rvm use 2.2.5
-
+      
 script:
   - mvn test -f ./pom.xml
-    
