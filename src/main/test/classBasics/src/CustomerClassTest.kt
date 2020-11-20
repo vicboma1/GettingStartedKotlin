@@ -2,10 +2,10 @@ package classBasics.src
 
 import CustomerClass
 import org.junit.After
+import org.junit.Assert.assertFalse
 import org.junit.Before
 import org.junit.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import org.junit.Assert.assertTrue
 
 
 /**
@@ -26,13 +26,13 @@ class CustomerClassTest {
     @Test
     fun testGetId() {
         val customer = CustomerClass(EXPECTED_ID)
-        assertTrue(EXPECTED_ID == customer.id, "Fail id")
+        assertTrue("Fail id",EXPECTED_ID == customer.id)
     }
 
     @Test
     fun testGetName() {
         val customer = CustomerClass(EXPECTED_ID)
-        assertTrue("" === customer.name, "Fail name")
+        assertTrue("Fail name","" === customer.name)
     }
 
     @Test
@@ -40,9 +40,9 @@ class CustomerClassTest {
         val customer = CustomerClass(EXPECTED_ID)
         val test = "test"
         customer.name = test
-        assertTrue(test.equals(customer.name), "Fail set name")
-        assertTrue(test == customer.name , "Fail set name")
-        assertTrue(test === customer.name, "Fail set name")
+        assertTrue("Fail set name", test.equals(customer.name) )
+        assertTrue("Fail set name", test == customer.name )
+        assertTrue("Fail set name", test === customer.name )
     }
 
     @Test
@@ -50,15 +50,15 @@ class CustomerClassTest {
         val expected = "Some code"
         val customer : CustomerClass = CustomerClass(EXPECTED_ID)
         val doSomething = customer.doSomething()
-        assertTrue(doSomething === expected, "Fail doSomething")
+        assertTrue("Fail doSomething", doSomething === expected )
     }
 
     @Test
     fun testToString() {
         val customer : CustomerClass = CustomerClass(EXPECTED_ID)
         val toString = customer.toString()
-        assertFalse(toString === EXPECTED_ID.toString(), "Fail toString")
-        assertTrue(toString == EXPECTED_ID.toString(), "Fail toString")
-        assertTrue(toString.equals(EXPECTED_ID.toString()), "Fail toString")
+        assertFalse("Fail toString", toString === EXPECTED_ID.toString())
+        assertTrue("Fail toString", toString == EXPECTED_ID.toString() )
+        assertTrue("Fail toString", toString.equals(EXPECTED_ID.toString()))
     }
 }

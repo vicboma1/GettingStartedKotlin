@@ -1,10 +1,10 @@
 package classBasics.src
 
 import Employee
+import junit.framework.Assert.assertTrue
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
-import kotlin.test.assertTrue
 
 /**
  * Created by vicboma on 28/10/15.
@@ -28,16 +28,15 @@ class EmployeeTest {
     fun testGetId() {
         val employee = Employee(EXPECTED_ID,EXPECTED_NAME)
         val id = employee.id
-        assertTrue(id === EXPECTED_ID, "Fail id")
+        assertTrue("Fail id", id === EXPECTED_ID )
     }
 
     @Test
     fun testGetName() {
         val employee = Employee(name = EXPECTED_NAME, id = EXPECTED_ID)
         val name = employee.name
-        assertTrue(name === EXPECTED_NAME, "Fail name")
-        assertTrue(name == EXPECTED_NAME, "Fail name")
-        assertTrue(name.equals(EXPECTED_NAME), "Fail name")
-
+        assertTrue("Fail name", name === EXPECTED_NAME)
+        assertTrue("Fail name", name == EXPECTED_NAME)
+        assertTrue("Fail name", name.equals(EXPECTED_NAME))
     }
 }

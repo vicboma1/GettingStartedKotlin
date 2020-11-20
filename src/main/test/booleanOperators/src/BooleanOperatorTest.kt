@@ -2,9 +2,9 @@ package classBasics.src
 
 import booleanOperators.src.BooleanOperator
 import org.junit.After
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
-import kotlin.test.assertTrue
 
 
 /**
@@ -37,7 +37,7 @@ class BooleanOperatorTest {
 
         var i = 0
         for(result in list){
-            assertTrue(result === EXPECTED_DISJUNCTION.get(i),"Fail disjunction")
+            assertTrue("Fail disjunction",result === EXPECTED_DISJUNCTION.get(i))
             i++
         }
     }
@@ -53,7 +53,7 @@ class BooleanOperatorTest {
 
         var i = 0
         for(result in list){
-            assertTrue(result === EXPECTED_CONJUNCTION.get(i),"Fail conjunction")
+            assertTrue("Fail conjunction", result === EXPECTED_CONJUNCTION.get(i))
             i++
         }
     }
@@ -67,7 +67,7 @@ class BooleanOperatorTest {
 
         var i = 0
         for(result in list){
-            assertTrue(result === EXPECTED_NEGATION.get(i),"Fail negation")
+            assertTrue("Fail negation", result === EXPECTED_NEGATION.get(i))
             i++
         }
     }

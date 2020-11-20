@@ -18,7 +18,7 @@ public class NumberOperations{
         return result
     }
 
-    inline fun reverseList<reified T>(list : List<T>) : Array<T> {
+    inline fun <reified T> reverseList(list : List<T>) : Array<T> {
         return list.reversed().toTypedArray();
     }
 
