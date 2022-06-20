@@ -10,7 +10,7 @@
 
     <properties>
         <jdk.version>1.8</jdk.version>
-        <kotlin.version>1.3.0-rc-198</kotlin.version>
+        <kotlin.version>1.6.0-M1</kotlin.version>
         <maven.version>4.0.0</maven.version>
         <timestamp>${maven.build.timestamp}</timestamp>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
